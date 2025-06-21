@@ -1,0 +1,8 @@
+type User = record { id : nat64; name : text; email : text };
+service : () -> {
+  create_user : (text, text) -> (nat64);
+  delete_user : (nat64) -> (bool);
+  list_users : () -> (vec User) query;
+  read_user : (nat64) -> (opt User) query;
+  update_user : (nat64, text, text) -> (bool);
+}

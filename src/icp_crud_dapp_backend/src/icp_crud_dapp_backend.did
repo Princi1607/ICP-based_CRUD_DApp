@@ -1,0 +1,12 @@
+type Item = record {
+  id: nat64;
+  content: text;
+};
+
+service : {
+  create_item: (text) -> (nat64);
+  read_item: (nat64) -> (opt Item) query;
+  update_item: (nat64, text) -> (bool);
+  delete_item: (nat64) -> (bool);
+  list_items: () -> (vec Item) query;
+};
